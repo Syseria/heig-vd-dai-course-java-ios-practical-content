@@ -14,10 +14,9 @@ public class BinaryFileReader implements Readable {
   @Override
   public void read(String filename) {
     try (InputStream is = new FileInputStream(filename);
-         Reader reader = new InputStreamReader(is, StandardCharsets.UTF_8);
-         BufferedReader br = new BufferedReader(reader)) {
+         Reader reader = new InputStreamReader(is, StandardCharsets.UTF_8)) {
       int c;
-      while ((c = br.read()) != -1) {
+      while ((c = reader.read()) != -1) {
         System.out.print(c);
       }
     } catch (IOException e) {
