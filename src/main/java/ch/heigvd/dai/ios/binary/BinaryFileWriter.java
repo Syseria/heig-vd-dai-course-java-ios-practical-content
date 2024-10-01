@@ -13,7 +13,6 @@ public class BinaryFileWriter implements Writable {
 
   @Override
   public void write(String filename, int sizeInBytes) {
-    //throw new UnsupportedOperationException("Please remove this exception and implement this method.");
     try (OutputStream os = new FileOutputStream(filename);
          Writer writer = new OutputStreamWriter(os, StandardCharsets.UTF_8);
          BufferedWriter bw = new BufferedWriter(writer)) {
