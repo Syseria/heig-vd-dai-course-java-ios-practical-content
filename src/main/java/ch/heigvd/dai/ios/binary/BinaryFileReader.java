@@ -13,7 +13,6 @@ public class BinaryFileReader implements Readable {
 
   @Override
   public void read(String filename) {
-    // throw new UnsupportedOperationException("Please remove this exception and implement this method.");
     try (InputStream is = new FileInputStream(filename);
          Reader reader = new InputStreamReader(is, StandardCharsets.UTF_8);
          BufferedReader br = new BufferedReader(reader)) {
