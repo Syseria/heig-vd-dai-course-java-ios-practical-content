@@ -14,10 +14,9 @@ public class BinaryFileWriter implements Writable {
   @Override
   public void write(String filename, int sizeInBytes) {
     try (OutputStream os = new FileOutputStream(filename);
-         Writer writer = new OutputStreamWriter(os, StandardCharsets.UTF_8);
-         BufferedWriter bw = new BufferedWriter(writer)) {
+         Writer writer = new OutputStreamWriter(os, StandardCharsets.UTF_8)) {
       for (int i = 0; i < sizeInBytes; ++i) {
-        bw.write(i);
+        writer.write(i);
       }
     } catch (IOException e) {
       System.out.println("Exception: " + e);
